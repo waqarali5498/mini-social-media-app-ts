@@ -1,0 +1,42 @@
+1)    /user
+
+1.1)  user/auth
+
+1.1.1) post("/login"){email,password}
+	
+1.1.2) post("/register"){email,  name,  gender,  phone,  birthday,  province,  password}
+
+1.1.3) post("/register/email/confirm"){email}-(Generate Token and Sent to User Email-token)
+
+1.1.4) get("/register/email/confirm:token"){token:params}
+
+1.1.5) put("/forget"){email}-(generate a token for forget password)
+
+1.1.6) get("/reset/:token"){token-params}(validate forget password generated token)
+
+1.1.7) post("/reset){token,password,confirmPassword}-(Will Update a New Password)
+
+
+
+1.2)  user/myProfile (Acces After Validating JWT)
+
+1.2.1) get("/data")
+	
+1.2.2) put("/data/:id"){id-params ,( name,email,gender,phone,birthday,province,password)-body}
+
+1.2.3) get("/posts")
+
+1.1.4) get("/post/:postId"){id:params}
+
+
+
+1.3)  user/post  (Acces After Validating JWT)
+
+1.3.1) post("/"){(userId, title, description, imgUrl)-body}-(creates a post)
+	
+1.3.2) get("/:postId"){id-params}
+
+1.3.3) post("/post/:id/like"){id-params,userId-body}
+
+1.3.4) post("/post/:id/comment"){postId:params,(userid,comenttext)-body}
+

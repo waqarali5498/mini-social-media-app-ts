@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.COMMENT = exports.LIKE = exports.RESET = exports.USER = exports.POST = void 0;
+const post_1 = require("./post");
+Object.defineProperty(exports, "POST", { enumerable: true, get: function () { return post_1.Post; } });
+const user_1 = require("./user");
+Object.defineProperty(exports, "USER", { enumerable: true, get: function () { return user_1.User; } });
+const resetPassword_1 = require("./resetPassword");
+Object.defineProperty(exports, "RESET", { enumerable: true, get: function () { return resetPassword_1.reset; } });
+const comment_1 = require("./comment");
+Object.defineProperty(exports, "COMMENT", { enumerable: true, get: function () { return comment_1.comment; } });
+const like_1 = require("./like");
+Object.defineProperty(exports, "LIKE", { enumerable: true, get: function () { return like_1.like; } });
